@@ -20,6 +20,7 @@
 	}
 	.hapus {
 		cursor: pointer;
+		user-select: none;
 	}
 	.jarak-bawah {
 		margin-bottom: 75px;
