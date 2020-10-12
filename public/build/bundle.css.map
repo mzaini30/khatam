@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<div class=\"container\">\n\t<br>\n\t<h5 class=\"text-center\">Khatam</h5>\n\t{#if data.length > 0}\n\t\t<hr>\n\t\t<p>Kamu sudah khatam sebanyak <strong>{data.length}</strong> kali</p>\n\t\t<ol class=\"jarak-bawah\">\n\t\t\t{#each data as x}\n\t\t\t\t<li><strong>{new Date(x.tanggal).getDate()} {namaBulan[new Date(x.tanggal).getMonth()]} {new Date(x.tanggal).getFullYear()}</strong> (<em>{moment(x.tanggal).fromNow()}</em>) <span class=\"hapus\" on:click={hapus(x.id)}>[hapus]</span></li>\n\t\t\t{/each}\n\t\t</ol>\n\t{/if}\n\t<div class=\"melayang btn btn-info\" on:click={tambah}>&plus;</div>\n</div>\n<style type=\"text/css\">\n\t.melayang {\n\t\tposition: fixed;\n\t\tright: 20px;\n\t\tbottom: 20px;\n\t}\n\t.hapus {\n\t\tcursor: pointer;\n\t}\n\t.jarak-bawah {\n\t\tmargin-bottom: 75px;\n\t}\n</style>\n<script type=\"text/javascript\">\n\timport {onMount} from 'svelte'\n\tlet data = []\n\tconst namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']\n\tconst tampil = () => db.data.reverse().toArray(x => data = x)\n\tconst hapus = (n) => {\n\t\tconst tanya = confirm('Hapus kah?')\n\t\tif (tanya) {\n\t\t\tdb.data.delete(n).then(() => tampil())\n\t\t}\n\t}\n\tonMount(() => tampil())\n\tconst tambah = () => {\n\t\tlet kalender = new Date\n\t\tlet tanggal = `${kalender.getFullYear()}-${kalender.getMonth() + 1}-${kalender.getDate()} ${kalender.getHours()}:${kalender.getMinutes()}:${kalender.getSeconds()}`\n\t\tdb.data.add({tanggal: tanggal}).then(() => tampil())\n\t}\n</script>"
+  ],
+  "names": [],
+  "mappings": "AAeC,SAAS,cAAC,CAAC,AACV,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,MAAM,cAAC,CAAC,AACP,MAAM,CAAE,OAAO,AAChB,CAAC,AACD,YAAY,cAAC,CAAC,AACb,aAAa,CAAE,IAAI,AACpB,CAAC"
+}
