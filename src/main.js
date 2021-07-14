@@ -1,7 +1,12 @@
-import App from './App.svelte';
+import { createApp } from 'vue'
+import App from './App.vue'
+import {createRouter, createWebHistory} from 'vue-router'
+import routes from './routes'
+import 'vue-global-api'
 
-const app = new App({
-	target: document.body
-});
+const router = createRouter({
+	routes,
+	history: createWebHistory()
+})
 
-export default app;
+createApp(App).use(router).mount('#app')
