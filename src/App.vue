@@ -1,7 +1,8 @@
 <template>
   <router-view></router-view>
+  <ReloadPrompt/>
 </template>
 
 <script setup>
-  import 'bulma/css/bulma.min.css'
+	import ReloadPrompt from './ReloadPrompt.vue'
 </script>
