@@ -1,4 +1,7 @@
 <template>
+  <router-link to='/' class="has-background-info p-3 is-block has-text-white">
+    Khatam
+  </router-link>
   <router-view></router-view>
   <ReloadPrompt/>
 </template>
