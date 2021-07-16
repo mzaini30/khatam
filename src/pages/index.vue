@@ -10,6 +10,7 @@
 				<div class="delete"></div>
 			</div>
 		</div>
+		<router-link to="/credit" class='has-text-centered is-block'>Credit</router-link>
 	</div>
 </template>
 
@@ -17,5 +18,6 @@
 	.list {
 		border-radius: 0;
 		font-weight: normal;
+		border: 1px solid white;
 	}
 </style>
