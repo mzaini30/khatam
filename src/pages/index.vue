@@ -1,6 +1,5 @@
 <script setup>
 	document.title = 'Khatam'
-	import tambah from '/src/icon/tambah.vue'
 </script>
 
 <template>
@@ -11,9 +10,7 @@
 				<div class="delete"></div>
 			</div>
 		</div>
-		<div class="icon">
-			<tambah></tambah>
-		</div>
+		<img src="/src/aset/plus.png" class="tombol-tambah" alt="">
 		<p class="has-text-centered mb-3">
 			<router-link to="/credit">Credit</router-link>
 		</p>
@@ -26,13 +23,13 @@
 		font-weight: normal;
 		border: 1px solid white;
 	}
-	.icon {
-		--posisi: 30px;
+	.tombol-tambah {
+		width: 40px;
 		cursor: pointer;
+		height: auto;
 		position: fixed;
-		display: block;
-		right: var(--posisi);
-		bottom: var(--posisi);
-		color: #3e8ed0!important;
+		--jarak: 10px;
+		right: var(--jarak);
+		bottom: var(--jarak);
 	}
 </style>
