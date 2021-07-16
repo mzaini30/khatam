@@ -5,4 +5,5 @@
 
 <script setup>
 	import ReloadPrompt from './ReloadPrompt.vue'
+  import 'bulma/css/bulma.min.css'
 </script>
