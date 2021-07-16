@@ -10,8 +10,8 @@ export default defineConfig({
       short_name: 'Khatam',
       display: 'minimal-ui',
       icons: [{
-        src: '/logo.png',
-        sizes: '200x200',
+        src: '/quran.png',
+        sizes: '512x512',
         type: 'image/png'
       }]
     }
