@@ -8,7 +8,6 @@ export default defineConfig({
     manifest: {
       name: 'Khatam',
       short_name: 'Khatam',
-      display: 'minimal-ui',
       icons: [{
         src: '/quran.png',
         sizes: '512x512',
